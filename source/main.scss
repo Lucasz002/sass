@@ -1,0 +1,42 @@
+// Variáveis
+$primary-color: #4CAF50;
+$transition-duration: 0.3s;
+
+// Mixins
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Estilos
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: $primary-color;
+    @include center;
+    height: 100vh;
+}
+
+.project {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform $transition-duration;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width: 768px) {
+    .project {
+        width: 100%;
+    }
+}
